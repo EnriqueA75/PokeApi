@@ -19,7 +19,13 @@ export class PokeService {
     return [this._pokemonHistorial];
   }
 
-  constructor(private http: HttpClient){}
+  get favorites() {
+    return [...this.favoritesPokemon];
+  }
+
+  constructor(private http: HttpClient){
+    this.favoritesPokemon = JSON.parse(localStorage.getItem('favorites')!) || [];
+  }
 
   searchPokemon(query: string){
     query = query.toLowerCase().trim();
@@ -41,6 +47,7 @@ export class PokeService {
     if(!this.favoritesPokemon.includes(pokemon)){
       this.favoritesPokemon.unshift(pokemon)
       localStorage.setItem('favorites', JSON.stringify(this.favoritesPokemon))
+      console.log(pokemon)
     }
   } 
 }
