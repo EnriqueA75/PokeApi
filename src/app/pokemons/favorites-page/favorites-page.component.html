@@ -1,3 +1,10 @@
-<div *ngFor="let results of favorites">
-    <app-pokemon-card [results]="results"></app-pokemon-card>
+<div>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm"  *ngFor="let results of favorites">
+            <app-pokemon-card [results]="results" [currentPage]="currentPage()"></app-pokemon-card>
+          </div>
+        </div>
+      </div>
+    <div>
 </div>

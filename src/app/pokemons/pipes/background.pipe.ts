@@ -24,7 +24,7 @@ export class backgroundPipe implements PipeTransform {
             case 'rock':
                 return '#B67F46'
             case 'fire':
-                return '#E34B4B'
+                return '#F9AAAA'
             default:
                 return 'white';
         }

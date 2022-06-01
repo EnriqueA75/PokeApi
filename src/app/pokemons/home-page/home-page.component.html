@@ -1,6 +1,6 @@
 <ul *ngIf="results && !pokemonFound">
     <li style="list-style-type: none;">
-        <app-pokemon-card [results]="results"></app-pokemon-card>
+        <app-pokemon-card [results]="results" [currentPage]="currentPage()"></app-pokemon-card>
     </li>
 </ul>
 <div class="text-center center-block" *ngIf="pokemonFound">

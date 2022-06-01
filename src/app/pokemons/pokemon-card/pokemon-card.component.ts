@@ -9,6 +9,7 @@ import { PokeService } from '../services/poke.service';
 export class PokemonCardComponent implements OnInit {
 
   @Input() results: any;
+  @Input() currentPage: string = '';
 
   defaultBackground: string = 'white';
 

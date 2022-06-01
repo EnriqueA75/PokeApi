@@ -44,7 +44,11 @@ export class PokeService {
       })
   }
   addFavorite(pokemon: any){
-    if(!this.favoritesPokemon.includes(pokemon)){
+    const existingPokemon = this.favoritesPokemon.filter(pok => {
+      return pok.id === pokemon.id
+    })
+    console.log(existingPokemon)
+    if(!existingPokemon){
       this.favoritesPokemon.unshift(pokemon)
       localStorage.setItem('favorites', JSON.stringify(this.favoritesPokemon))
       console.log(pokemon)

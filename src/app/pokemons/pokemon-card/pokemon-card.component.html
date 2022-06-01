@@ -11,9 +11,12 @@
         <div class="col-sm px-1">
             <a class="btn btn-success">More Information</a>
         </div>
-        <div class="col-sm px-1">
+        <div class="col-sm px-1" *ngIf="currentPage === '/' || currentPage === '/home'">
             <button class="btn btn-warning text-light fav-icon" (click)="addToFavorite(results)">Add to Favorites</button>
         </div>
+        <div class="col-sm px-1" *ngIf="currentPage === '/favorites'">
+          <button class="btn btn-danger text-light fav-icon" (click)="addToFavorite(results)">Delete from Favorite</button>
+      </div>
       </div>
     </div>
   </div>
