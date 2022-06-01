@@ -1,0 +1,12 @@
+.bg-100{
+    /* background: linear-gradient(to bottom right,#024,#402) center center fixed; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}

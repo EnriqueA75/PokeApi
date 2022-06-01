@@ -9,6 +9,8 @@ export class PokeService {
   private _pokemonHistorial: any[] = [];
 
   public actualPokemon: any;
+
+  public isPokemon: boolean = false;
   // public actualPokemonName: string;
 
   get historial() {
@@ -25,7 +27,13 @@ export class PokeService {
     this.http.get(`https://pokeapi.co/api/v2/pokemon/${query}`)
       .subscribe( resp => {
         this.actualPokemon = resp;
-        console.log(resp)
+        this.isPokemon = false;
+      },
+      err => {
+        if(err){
+          this.isPokemon = true;
+        }
       })
+
   }
 }

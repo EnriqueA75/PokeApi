@@ -1,11 +1,11 @@
-<div class="card in-card-back moving-animation" style="width: 18rem; margin: 0 auto; margin-top: 6rem;" >
-    <div class="card-img card-background">
+<div class="card in-card-back moving-animation border border-white" style="width: 18rem; margin: 0 auto; margin-top: 6rem;" >
+    <div class="card-img card-background"[style.background-color]="conditionalStyle(results.types[0].type.name)">
          <img src="{{results.sprites.other['official-artwork'].front_default}}" class="card-img-top" alt="..."/>
     </div>
     <div class="card-body text-light">
-      <h5 class="card-title title-font px-1">{{results.species.name}}</h5>
+      <h5 class="card-title title-font px-1">{{results.species.name | titlecase}}</h5>
       <p class="card-text body-font px-1">Pokedex Number: {{results.id}}</p>
-      <p class="card-text body-font px-1">Type: {{results.types[0].type.name}}</p>
+      <p class="card-text body-font px-1">Type: {{results.types[0].type.name | titlecase}}</p>
       <p class="card-text body-font px-1">Weight: {{results.weight}}</p>
       <div class="d-flex">
         <div class="col-sm px-1">

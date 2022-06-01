@@ -14,6 +14,10 @@ export class HomePageComponent implements OnInit {
     return this.pokeService.actualPokemon;
   }
 
+  get pokemonFound() {
+    return this.pokeService.isPokemon;
+  }
+
   ngOnInit(): void {
   }
 
