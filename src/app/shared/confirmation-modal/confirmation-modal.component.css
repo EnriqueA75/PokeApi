@@ -1,0 +1,28 @@
+.card-position {
+    animation: fadeIn;
+    animation-duration: 1s;
+    width: 25rem;
+    margin: 0 auto;
+    margin-top: 30vh;
+}
+
+@-webkit-keyframes fadeIn {
+    from {    
+        transform: scale(0.60); 
+        opacity: 0;
+    }
+    to {
+        transform: scale(1); 
+        opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    from {    
+        transform: scale(0.60); 
+        opacity: 0;
+    }
+    to {
+        transform: scale(1); 
+        opacity: 1;
+    }
+}

@@ -4,6 +4,7 @@ import { FavoritesPageComponent } from './favorites-page/favorites-page.componen
 import { HomePageComponent } from './home-page/home-page.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { backgroundPipe } from './pipes/background.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { backgroundPipe } from './pipes/background.pipe';
   ],
   imports: [
     CommonModule,
+    SharedModule
   ]
 })
 export class PokemonsModule { }

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { PokeService } from '../pokemons/services/poke.service';
+import { PokeService } from '../../pokemons/services/poke.service';
 
 @Component({
   selector: 'app-sidebar',
