@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PokeService } from '../services/poke.service';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -11,7 +12,13 @@ export class PokemonCardComponent implements OnInit {
 
   defaultBackground: string = 'white';
 
-  constructor() { }
+  constructor(private pokeService: PokeService) { }
+
+  addToFavorite(pokemon: any){
+    if(pokemon){
+      this.pokeService.addFavorite(pokemon)
+    }
+  }
 
   ngOnInit(): void {
   }

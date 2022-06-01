@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Validators } from '@angular/forms';
 import { PokeService } from '../pokemons/services/poke.service';
 
 @Component({

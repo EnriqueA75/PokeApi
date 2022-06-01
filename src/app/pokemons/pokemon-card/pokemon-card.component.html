@@ -9,10 +9,10 @@
       <p class="card-text body-font px-1">Weight: {{results.weight}}</p>
       <div class="d-flex">
         <div class="col-sm px-1">
-            <a href="#" class="btn btn-success ">More Information</a>
+            <a class="btn btn-success">More Information</a>
         </div>
         <div class="col-sm px-1">
-            <a href="#" class="btn btn-warning text-light fav-icon">Add to Favorites</a>
+            <button class="btn btn-warning text-light fav-icon" (click)="addToFavorite(results)">Add to Favorites</button>
         </div>
       </div>
     </div>

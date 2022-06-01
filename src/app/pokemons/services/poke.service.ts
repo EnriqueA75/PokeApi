@@ -11,6 +11,8 @@ export class PokeService {
   public actualPokemon: any;
 
   public isPokemon: boolean = false;
+
+  public favoritesPokemon: any[] = [];
   // public actualPokemonName: string;
 
   get historial() {
@@ -20,7 +22,7 @@ export class PokeService {
   constructor(private http: HttpClient){}
 
   searchPokemon(query: string){
-    query = query.toLocaleLowerCase().trim();
+    query = query.toLowerCase().trim();
     if(!this._pokemonHistorial.includes(query)){
       this._pokemonHistorial.unshift( query )
     }
@@ -34,6 +36,11 @@ export class PokeService {
           this.isPokemon = true;
         }
       })
-
   }
+  addFavorite(pokemon: any){
+    if(!this.favoritesPokemon.includes(pokemon)){
+      this.favoritesPokemon.unshift(pokemon)
+      localStorage.setItem('favorites', JSON.stringify(this.favoritesPokemon))
+    }
+  } 
 }
