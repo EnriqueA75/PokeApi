@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PokeService } from './pokemons/services/poke.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokeApiApp';
+
+  constructor(private pokeService: PokeService) { }
+
+  get pokemons() {
+    return this.pokeService.historial[0];
+  }
 }

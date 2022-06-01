@@ -1,0 +1,19 @@
+<div class="card in-card-back moving-animation" style="width: 18rem; margin: 0 auto; margin-top: 6rem;" >
+    <div class="card-img card-background">
+         <img src="{{results.sprites.other['official-artwork'].front_default}}" class="card-img-top" alt="..."/>
+    </div>
+    <div class="card-body text-light">
+      <h5 class="card-title title-font px-1">{{results.species.name}}</h5>
+      <p class="card-text body-font px-1">Pokedex Number: {{results.id}}</p>
+      <p class="card-text body-font px-1">Type: {{results.types[0].type.name}}</p>
+      <p class="card-text body-font px-1">Weight: {{results.weight}}</p>
+      <div class="d-flex">
+        <div class="col-sm px-1">
+            <a href="#" class="btn btn-success ">More Information</a>
+        </div>
+        <div class="col-sm px-1">
+            <a href="#" class="btn btn-warning text-light fav-icon">Add to Favorites</a>
+        </div>
+      </div>
+    </div>
+  </div>

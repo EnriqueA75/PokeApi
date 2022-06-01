@@ -10,14 +10,20 @@
                 <a href="#" class="nav-item nav-link">Favorites</a>
             </div>
             <div class="navbar-nav ms-auto">
-                <form class="d-flex">
+                <!-- <form class="d-flex"> -->
                     <div class="input-group">                    
-                        <input type="text" class="form-control" placeholder="Search">
-                        <button type="button" class="btn btn-secondary btn-search">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Search"
+                            (keyup.enter)="searchPk()"
+                            #txtSearchPk
+                        />
+                        <!-- <button type="button" class="btn btn-secondary btn-search">
                             Search
-                        </button>
+                        </button> -->
                     </div>
-                </form>
+                <!-- </form> -->
             </div>
         </div>
     </div>
