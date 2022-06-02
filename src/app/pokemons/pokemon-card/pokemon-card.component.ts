@@ -12,14 +12,18 @@ export class PokemonCardComponent implements OnInit {
   @Input() currentPage: string = '';
 
   defaultBackground: string = 'white';
+  isFavModalOpen: boolean = false;
+  isDelModalOpen: boolean = false;
 
   constructor(private pokeService: PokeService) { }
 
   addToFavorite(pokemon: any){
     if(pokemon){
       this.pokeService.addFavorite(pokemon)
+      this.pokeService.handleModalView();
     }
   }
+
   deleteFavorite(pokemonId: number){
     if(pokemonId){
       this.pokeService.deletePokemon(pokemonId)

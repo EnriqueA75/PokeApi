@@ -11,9 +11,22 @@ import { Message } from 'src/app/interface/message';
 })
 export class HomePageComponent implements OnInit {
 
-  modalContent: Modal = {
-    gifUrl: 'https://media2.giphy.com/media/UHAYP0FxJOmFBuOiC2/200w.gif?cid=82a1493b05x1bcijfqjga2k9li84ngnz41vwgcq67zratut8&rid=200w.gif&ct=g',
-    textContent: 'sorry, there is not pokemon with this name. :('
+  openTheErrorModal: boolean = false;
+
+  modalContent = {} as Modal;
+
+  modalInformation(){
+    if(!this.pokeService.isPokemon){
+      return this.modalContent = {
+        gifUrl: 'https://media2.giphy.com/media/UHAYP0FxJOmFBuOiC2/200w.gif?cid=82a1493b05x1bcijfqjga2k9li84ngnz41vwgcq67zratut8&rid=200w.gif&ct=g',
+        textContent: 'sorry, there is not pokemon with this name. :('
+      }
+    } else {
+      return this.modalContent = {
+        gifUrl: 'https://i.pinimg.com/originals/fb/2c/56/fb2c56a4b5b055f1e5b0adab5a7593c5.gif',
+        textContent: 'Added to you favorites!'
+      }
+    }
   }
 
   messageContent: Message = {
@@ -35,7 +48,7 @@ export class HomePageComponent implements OnInit {
     return this.pokeService.isPokemon;
   }
   get isThemodalOpen() {
-    return this.pokeService.isModalOpen;
+    return this.openTheErrorModal = this.pokeService.isModalOpen;
   }
 
   currentPage(){
