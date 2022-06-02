@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class PokeService {
 
+  private _pokemonHistorial: any[] = [];
+
   public actualPokemon: any;
 
   public isPokemon: boolean = true;
@@ -13,20 +15,28 @@ export class PokeService {
   public favoritesPokemon: any[] = [];
   // public actualPokemonName: string;
 
-  get favorites() {
-    return [...this.favoritesPokemon];
+  get historial() {
+    return [this._pokemonHistorial];
   }
 
-  constructor(private http: HttpClient){
-    this.favoritesPokemon = JSON.parse(localStorage.getItem('favorites')!) || [];
+  get favorites() {
+    return [...this.favoritesPokemon];
   }
 
   closeModalView(){
     this.isPokemon = true;
   }
 
+
+  constructor(private http: HttpClient){
+    this.favoritesPokemon = JSON.parse(localStorage.getItem('favorites')!) || [];
+  }
+
   searchPokemon(query: string){
     query = query.toLowerCase().trim();
+    if(!this._pokemonHistorial.includes(query)){
+      this._pokemonHistorial.unshift( query )
+    }
     this.http.get(`https://pokeapi.co/api/v2/pokemon/${query}`)
       .subscribe( resp => {
         this.actualPokemon = resp;
@@ -42,11 +52,9 @@ export class PokeService {
     const existingPokemon = this.favoritesPokemon.filter(pok => {
       return pok.id === pokemon.id
     })
-    console.log(existingPokemon)
-    if(!existingPokemon){
+    if(!existingPokemon.length){
       this.favoritesPokemon.unshift(pokemon)
       localStorage.setItem('favorites', JSON.stringify(this.favoritesPokemon))
-      console.log(pokemon)
     }
   } 
 }
