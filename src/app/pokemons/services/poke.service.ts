@@ -35,6 +35,13 @@ export class PokeService {
     this.favoritesPokemon = JSON.parse(localStorage.getItem('favorites')!) || [];
   }
 
+  deletePokemon(pokemonId: number) {
+    this.favoritesPokemon = this.favoritesPokemon.filter(pokemon => {
+      return pokemon.id !== pokemonId
+    })
+    localStorage.setItem('favorites', JSON.stringify(this.favoritesPokemon))
+  }
+
   searchPokemon(query: string){
     query = query.toLowerCase().trim();
     if(!this._pokemonHistorial.includes(query)){

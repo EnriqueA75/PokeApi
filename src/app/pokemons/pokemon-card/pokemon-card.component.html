@@ -15,7 +15,7 @@
             <button class="btn btn-warning text-light fav-icon" (click)="addToFavorite(results)">Add to Favorites</button>
         </div>
         <div class="col-sm px-1" *ngIf="currentPage === '/favorites'">
-          <button class="btn btn-danger text-light fav-icon" (click)="addToFavorite(results)">Delete from Favorite</button>
+          <button class="btn btn-danger text-light fav-icon" (click)="deleteFavorite(results.id)">Delete from Favorite</button>
       </div>
       </div>
     </div>

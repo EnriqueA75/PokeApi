@@ -20,6 +20,11 @@ export class PokemonCardComponent implements OnInit {
       this.pokeService.addFavorite(pokemon)
     }
   }
+  deleteFavorite(pokemonId: number){
+    if(pokemonId){
+      this.pokeService.deletePokemon(pokemonId)
+    }
+  }
 
   ngOnInit(): void {
   }
