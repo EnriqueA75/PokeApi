@@ -24,7 +24,7 @@ export class HomePageComponent implements OnInit {
     } else {
       return this.modalContent = {
         gifUrl: 'https://i.pinimg.com/originals/fb/2c/56/fb2c56a4b5b055f1e5b0adab5a7593c5.gif',
-        textContent: 'Added to you favorites!'
+        textContent: 'Added to your favorites!'
       }
     }
   }

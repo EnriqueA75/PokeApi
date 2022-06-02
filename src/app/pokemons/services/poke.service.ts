@@ -34,7 +34,12 @@ export class PokeService {
   constructor(private http: HttpClient){
     this.favoritesPokemon = JSON.parse(localStorage.getItem('favorites')!) || [];
   }
-
+  pokemonExisting(pokemonId: number) {
+    const exist = this.favoritesPokemon.filter(pokemon => {
+      return pokemon.id == pokemonId
+    })
+    return exist;
+  }
   deletePokemon(pokemonId: number) {
     this.favoritesPokemon = this.favoritesPokemon.filter(pokemon => {
       return pokemon.id !== pokemonId

@@ -30,7 +30,15 @@ export class PokemonCardComponent implements OnInit {
     }
   }
 
+  existingPokemonCheck(pokemonId: number) {
+    return this.pokeService.pokemonExisting(pokemonId);
+  }
+
   ngOnInit(): void {
+  }
+
+  loglog(){
+    console.log(this.existingPokemonCheck(999))
   }
 
   conditionalStyle(element: string) {

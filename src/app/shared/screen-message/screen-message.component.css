@@ -6,7 +6,13 @@
     justify-content: center;
     flex-direction: column;
 }
+
 .text-width {
     width: 35%;
     text-align: center;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
 }

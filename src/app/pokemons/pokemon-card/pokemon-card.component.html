@@ -7,16 +7,19 @@
       <p class="card-text body-font px-1">Pokedex Number: {{results.id}}</p>
       <p class="card-text body-font px-1">Type: {{results.types[0].type.name | titlecase}}</p>
       <p class="card-text body-font px-1">Weight: {{results.weight}}</p>
-      <div class="d-flex">
+      <div class="d-flex text-center">
         <div class="col-sm px-1">
             <a class="btn btn-success">More Information</a>
         </div>
-        <div class="col-sm px-1" *ngIf="currentPage === '/' || currentPage === '/home'">
+        <div class="col-sm px-1" *ngIf="currentPage === '/' && !existingPokemonCheck(results.id).length">
             <button class="btn btn-warning text-light fav-icon" (click)="addToFavorite(results)">Add to Favorites</button>
         </div>
         <div class="col-sm px-1" *ngIf="currentPage === '/favorites'">
           <button class="btn btn-danger text-light fav-icon" (click)="deleteFavorite(results.id)">Delete from Favorite</button>
       </div>
+      <div class="col-sm px-1" *ngIf="currentPage === '/' && existingPokemonCheck(results.id).length">
+        <button class="btn btn-info text-light fav-icon" (click)="loglog()">Already Favorite</button>
+    </div>
       </div>
     </div>
   </div>
