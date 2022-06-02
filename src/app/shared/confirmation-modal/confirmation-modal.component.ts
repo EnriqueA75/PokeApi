@@ -10,7 +10,7 @@ import { PokeService } from '../../pokemons/services/poke.service';
 
 export class ConfirmationModalComponent implements OnInit {
 
-  @Input() modalContent: any = {}
+  @Input() modalContent = {} as Modal;
 
   constructor(private pokeService: PokeService) { }
 

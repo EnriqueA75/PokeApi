@@ -6,15 +6,3 @@
     background-size: cover;
     height: 100vh;
 }
-.center-content {
-    text-align: center;
-    margin-top: 8%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.text-width {
-    width: 35%;
-    text-align: center;
-}

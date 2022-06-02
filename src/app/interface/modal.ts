@@ -1,4 +1,4 @@
 export interface Modal {
-    gifUrl?: string;
-    textContent?: string;
+    gifUrl: string;
+    textContent: string;
 }
