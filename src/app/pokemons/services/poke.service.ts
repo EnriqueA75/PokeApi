@@ -13,7 +13,10 @@ export class PokeService {
   public isPokemon: boolean = true;
 
   public favoritesPokemon: any[] = [];
-  // public actualPokemonName: string;
+
+  public isModalOpen: boolean = false;
+
+  // public actualPokemonName: string; 
 
   get historial() {
     return [this._pokemonHistorial];
@@ -23,10 +26,10 @@ export class PokeService {
     return [...this.favoritesPokemon];
   }
 
-  closeModalView(){
-    this.isPokemon = true;
+  handleModalView(){
+    console.log('desde handleModalView')
+    this.isModalOpen = !this.isModalOpen;
   }
-
 
   constructor(private http: HttpClient){
     this.favoritesPokemon = JSON.parse(localStorage.getItem('favorites')!) || [];
@@ -45,6 +48,7 @@ export class PokeService {
       err => {
         if(err){
           this.isPokemon = false;
+          this.handleModalView()
         }
       })
   }

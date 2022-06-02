@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokeService } from '../services/poke.service';
 import { Router } from '@angular/router';
 import { Modal } from 'src/app/interface/modal';
+import { Message } from 'src/app/interface/message';
 
 @Component({
   selector: 'app-home-page',
@@ -15,7 +16,7 @@ export class HomePageComponent implements OnInit {
     textContent: 'sorry, there is not pokemon with this name. :('
   }
 
-  messageContent = {
+  messageContent: Message = {
     title: "Search Pokemons!",
     bodyText: 'Pokémon is short for Pocket Monsters, the original Japanese name. The franchise has its roots in a gaming magazine in the early 1980s in Japan—Game Freak, started by Satoshi Tajiri and Ken Sugimori',
     informationImage: 'https://i.pinimg.com/originals/9f/b1/25/9fb125f1fedc8cc62ab5b20699ebd87d.gif'
@@ -32,6 +33,9 @@ export class HomePageComponent implements OnInit {
 
   get pokemonFound() {
     return this.pokeService.isPokemon;
+  }
+  get isThemodalOpen() {
+    return this.pokeService.isModalOpen;
   }
 
   currentPage(){

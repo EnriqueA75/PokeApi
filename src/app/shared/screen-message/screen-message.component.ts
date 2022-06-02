@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Message } from 'src/app/interface/message';
 
 @Component({
   selector: 'app-screen-message',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ScreenMessageComponent implements OnInit {
 
-  @Input() messageContent: any;
+  @Input() messageContent = {} as Message;
 
   constructor() { }
 

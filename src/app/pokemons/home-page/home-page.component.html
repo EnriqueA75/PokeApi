@@ -1,4 +1,4 @@
-<div *ngIf="pokemonFound && !results">
+<div *ngIf="!results">
     <app-screen-message [messageContent]="messageContent"></app-screen-message>
 </div>
 <ul *ngIf="results && pokemonFound">
@@ -6,6 +6,6 @@
         <app-pokemon-card [results]="results" [currentPage]="currentPage()"></app-pokemon-card>
     </li>
 </ul>
-<div *ngIf="!pokemonFound">
+<div *ngIf="isThemodalOpen">
     <app-confirmation-modal [modalContent]="modalContent"></app-confirmation-modal>
 </div>

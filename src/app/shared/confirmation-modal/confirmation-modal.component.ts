@@ -18,7 +18,8 @@ export class ConfirmationModalComponent implements OnInit {
   }
 
   closeModal() {
-    this.pokeService.closeModalView();
+    console.log('presionando el modal')
+    this.pokeService.handleModalView();
   }
 
 }

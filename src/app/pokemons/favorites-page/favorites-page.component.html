@@ -8,3 +8,6 @@
       </div>
     <div>
 </div>
+<div *ngIf="!favorites.length">
+  <app-screen-message [messageContent]="messageContent"></app-screen-message>
+</div>
