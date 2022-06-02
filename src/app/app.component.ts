@@ -9,9 +9,6 @@ import { PokeService } from './pokemons/services/poke.service';
 export class AppComponent {
   title = 'pokeApiApp';
 
-  constructor(private pokeService: PokeService) { }
+  constructor() { }
 
-  get pokemons() {
-    return this.pokeService.historial[0];
-  }
 }

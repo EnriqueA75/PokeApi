@@ -1,16 +1,18 @@
-<ul *ngIf="results && !pokemonFound">
+<div *ngIf="pokemonFound && !results" class="text-white center-content">
+    <h5>Start Searching Pokemons!</h5>
+    <div class="text-width">
+        <p>Pokémon is short for “Pocket Monsters", the original Japanese name.
+            The franchise has its roots in a gaming magazine in the early 1980s in Japan—Game Freak,
+             started by Satoshi Tajiri and Ken Sugimori
+       </p>
+       <img src="https://i.pinimg.com/originals/9f/b1/25/9fb125f1fedc8cc62ab5b20699ebd87d.gif" alt="Running Pikachu">
+    </div>
+</div>
+<ul *ngIf="results && pokemonFound">
     <li style="list-style-type: none;">
         <app-pokemon-card [results]="results" [currentPage]="currentPage()"></app-pokemon-card>
     </li>
 </ul>
-<div class="text-center center-block" *ngIf="pokemonFound">
-
+<div *ngIf="!pokemonFound">
+    <app-confirmation-modal [modalContent]="modalContent"></app-confirmation-modal>
 </div>
-<div *ngIf="pokemonFound">
-    <div class="row h-100 text-center" style="margin-top: 6rem;">
-        <div class="col-sm-12 my-auto">
-            <h1 class="text-white">There's no Pokemon with this name!</h1>
-        </div>
-    </div>
-</div>
-<app-confirmation-modal></app-confirmation-modal>
