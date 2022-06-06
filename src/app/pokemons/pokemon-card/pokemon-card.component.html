@@ -9,7 +9,7 @@
       <p class="card-text body-font px-1">Weight: {{results.weight}}</p>
       <div class="d-flex text-center">
         <div class="col-sm px-1">
-            <a class="btn btn-success">More Information</a>
+            <a [routerLink]="['/pokemons/pokemon', results.species.name]" class="btn btn-success">More Information</a>
         </div>
         <div class="col-sm px-1" *ngIf="currentPage === '/' && !existingPokemonCheck(results.id).length">
             <button class="btn btn-warning text-light fav-icon" (click)="addToFavorite(results)">Add to Favorites</button>
