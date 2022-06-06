@@ -1,5 +1,5 @@
 <div class="card in-card-back moving-animation border border-white" style="width: 18rem; margin: 0 auto; margin-top: 6rem;" >
-    <div class="card-img card-background"[style.background-color]="conditionalStyle(results.types[0].type.name)">
+    <div class="card-img card-background text-center"[style.background-color]="conditionalStyle(results.types[0].type.name)">
          <img src="{{results.sprites.other['official-artwork'].front_default}}" class="card-img-top" alt="..."/>
     </div>
     <div class="card-body text-light">
@@ -14,11 +14,11 @@
         <div class="col-sm px-1" *ngIf="currentPage === '/' && !existingPokemonCheck(results.id).length">
             <button class="btn btn-warning text-light fav-icon" (click)="addToFavorite(results)">Add to Favorites</button>
         </div>
-        <div class="col-sm px-1" *ngIf="currentPage === '/favorites'">
+        <div class="col-sm px-1" *ngIf="currentPage === '/pokemons/favorites'">
           <button class="btn btn-danger text-light fav-icon" (click)="deleteFavorite(results.id)">Delete from Favorite</button>
       </div>
       <div class="col-sm px-1" *ngIf="currentPage === '/' && existingPokemonCheck(results.id).length">
-        <button class="btn btn-info text-light fav-icon" (click)="loglog()">Already Favorite</button>
+        <button class="btn btn-info text-light fav-icon">Already Favorite</button>
     </div>
       </div>
     </div>

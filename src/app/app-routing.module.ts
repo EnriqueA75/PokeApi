@@ -10,8 +10,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'favorites',
-    component: FavoritesPageComponent
+    path: 'pokemons',
+    loadChildren: () => import('./pokemons/pokemons.module').then(m => m.PokemonsModule) 
   },
   {
     path: '**',

@@ -10,6 +10,11 @@ import { Message } from 'src/app/interface/message';
 })
 export class FavoritesPageComponent implements OnInit {
 
+  modalContent = {
+    gifUrl: 'https://c.tenor.com/B-I9jCO00-4AAAAj/pokemon-cubone.gif',
+    textContent: 'This pokemon has been deleted from your list'
+  }
+
   messageContent: Message = {
     title: "You dont have any favorite pokemon!",
     bodyText: 'Start searching for a pokemons and add your favorites to the list :D',
@@ -26,6 +31,10 @@ export class FavoritesPageComponent implements OnInit {
 
   currentPage(){
     return this.router.url;
+  }
+
+  get isThemodalOpen() {
+    return this.pokeService.isModalOpen;
   }
 
   ngOnInit(): void {

@@ -27,6 +27,7 @@ export class PokemonCardComponent implements OnInit {
   deleteFavorite(pokemonId: number){
     if(pokemonId){
       this.pokeService.deletePokemon(pokemonId)
+      this.pokeService.handleModalView();
     }
   }
 

@@ -11,3 +11,6 @@
 <div *ngIf="!favorites.length">
   <app-screen-message [messageContent]="messageContent"></app-screen-message>
 </div>
+<div *ngIf="isThemodalOpen">
+  <app-confirmation-modal [modalContent]="modalContent"></app-confirmation-modal>
+</div>
