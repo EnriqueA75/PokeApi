@@ -12,6 +12,11 @@ export class DetailedPokemonComponent implements OnInit {
 
   pokemon: any;
 
+  clientesMapa = {
+    '=1': 'Type:',
+    '=2': 'Types:'
+  } 
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private pokeService: PokeService

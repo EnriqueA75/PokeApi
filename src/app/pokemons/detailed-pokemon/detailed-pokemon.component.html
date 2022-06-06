@@ -9,11 +9,12 @@
                 </div>
                 <div class="text-light text-center title-font">
                     <h4>{{pokemon.species.name | titlecase}}</h4>
+                    <p>Pokédex N° {{pokemon.id}}</p>
                 </div>
             </div>
             <div class="d-flex flex-column mx-auto">
                 <div class="d-flex flex-row justify-content-evenly">
-                    <div class="text-light px-2 rounded py-4">
+                    <div class="text-light px-2 rounded py-4" *ngIf="pokemon.sprites.front_default">
                         <p class="title-font text-light py-2">Front Sprites</p>
                         <div class="d-flex">
                             <div class="text-center">
@@ -26,7 +27,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-light h-100 px-2 rounded py-4">
+                    <div class="text-light h-100 px-2 rounded py-4" *ngIf="pokemon.sprites.back_default">
                         <p class="title-font text-light py-2">Back Sprites</p>
                         <div class="d-flex">
                             <div class="text-center">
@@ -40,8 +41,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center text-white">
-                    <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. </p>
+                <div class="text-white d-flex">
+                    <label class="px-2">{{pokemon.types.length | i18nPlural:clientesMapa }}</label>
+                    <div *ngFor="let type of pokemon.types">
+                        <div class="col-sm px-2">
+                            <p>{{type.type.name | titlecase}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
