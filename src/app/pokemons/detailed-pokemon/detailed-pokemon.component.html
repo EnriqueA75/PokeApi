@@ -42,10 +42,40 @@
                     </div>
                 </div>
                 <div class="text-white d-flex">
-                    <label class="px-2">{{pokemon.types.length | i18nPlural:clientesMapa }}</label>
+                    <label>{{pokemon.types.length | i18nPlural:clientesMapa }}</label>
                     <div *ngFor="let type of pokemon.types">
                         <div class="col-sm px-2">
                             <p>{{type.type.name | titlecase}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-white d-flex">
+                    <div class="pe-2">
+                        <p>Base Experience: {{pokemon.base_experience}}</p>
+                    </div>
+                    <div class="pt-bar">
+                        <div class="rounded" [ngStyle]="{'width.px': pokemon.base_experience/3}" style="height: 10px; background-color: #f2f211;">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-white d-flex">
+                    <div class="pe-2">
+                        <p>Height: {{pokemon.height}}</p>
+                    </div>
+                    <div class="pt-bar">
+                        <div class="rounded" [ngStyle]="{'width.px': pokemon.height*5}" style="height: 10px; background-color: aqua;">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-white d-flex">
+                    <div class="pe-2">
+                        <p>Weight: {{pokemon.weight}}</p>
+                    </div>
+                    <div class="pt-bar">
+                        <div class="rounded" [ngStyle]="{'width.px': pokemon.weight/3}" style="height: 10px; background-color: #ff00fb;">
+                            <span></span>
                         </div>
                     </div>
                 </div>
