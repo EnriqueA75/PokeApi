@@ -1,0 +1,10 @@
+.title-font {
+    font-family: 'Press Start 2P', cursive;  
+}
+.responsive {
+    width: 100%;
+    height: auto;
+}
+.pl-10 {
+    padding-left: 15vh;
+}
