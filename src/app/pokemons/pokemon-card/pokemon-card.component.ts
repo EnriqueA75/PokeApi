@@ -38,10 +38,6 @@ export class PokemonCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loglog(){
-    console.log(this.existingPokemonCheck(999))
-  }
-
   conditionalStyle(element: string) {
     switch (element) {
       case 'normal':

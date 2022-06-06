@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap, pipe } from 'rxjs';
+import { PokeService } from '../services/poke.service';
 
 @Component({
   selector: 'app-detailed-pokemon',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailedPokemonComponent implements OnInit {
 
-  constructor() { }
+  pokemon: any;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private pokeService: PokeService
+  ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params
+      .pipe(
+        switchMap( ({id}) => this.pokeService.getPokemonDetails(id))
+      )
+      .subscribe((pokemon) => this.pokemon = pokemon)
   }
 
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,11 @@ export class PokeService {
     localStorage.setItem('favorites', JSON.stringify(this.favoritesPokemon))
   }
 
+  getPokemonDetails(name: string): Observable<any>{
+    console.log(name)
+    return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  }
+
   searchPokemon(query: string){
     query = query.toLowerCase().trim();
     if(!this._pokemonHistorial.includes(query)){
@@ -64,6 +70,7 @@ export class PokeService {
         }
       })
   }
+  
   addFavorite(pokemon: any){
     const existingPokemon = this.favoritesPokemon.filter(pok => {
       return pok.id === pokemon.id

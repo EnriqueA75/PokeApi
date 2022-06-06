@@ -1,1 +1,5 @@
-<p>detailed-pokemon works!</p>
+<app-spinner *ngIf="!pokemon; else divPokemon"></app-spinner>
+
+<<ng-template #divPokemon>
+    pokemon
+</ng-template>
