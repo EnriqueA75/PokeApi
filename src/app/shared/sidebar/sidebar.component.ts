@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { PokeService } from '../../pokemons/services/poke.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +9,10 @@ import { PokeService } from '../../pokemons/services/poke.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private pokeService: PokeService) { }
+  constructor(
+    private pokeService: PokeService,
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +26,10 @@ export class SidebarComponent implements OnInit {
     }
     this.pokeService.searchPokemon(value);
     this.txtSearchPk.nativeElement.value = '';
+  }
+
+  currentPage(){
+    return this.router.url;
   }
 
 }

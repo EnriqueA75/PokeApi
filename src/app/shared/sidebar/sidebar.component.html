@@ -11,7 +11,7 @@
                 <a href="/home" class="nav-item nav-link">Home</a>
                 <a href="/pokemons/favorites" class="nav-item nav-link">Favorites</a>
             </div>
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-nav ms-auto" *ngIf="currentPage() === '/'">
                 <!-- <form class="d-flex"> -->
                     <div class="input-group">                    
                         <input 
