@@ -10,4 +10,27 @@
 }
 .pt-bar{
     padding-top: 6px;
+    animation: animatedBar;
+    animation-duration: 1s;
+}
+
+@keyframes animatedBar {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+}
+@-webkit-keyframes animatedBar {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
 }

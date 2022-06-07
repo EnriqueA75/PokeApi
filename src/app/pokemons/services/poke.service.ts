@@ -48,13 +48,12 @@ export class PokeService {
     localStorage.setItem('favorites', JSON.stringify(this.favoritesPokemon))
   }
 
-  getPokemonDetails(name: string): Observable<any>{
-    console.log(name)
+  getPokemonDetails(name: any): Observable<any>{
     return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
 
   searchPokemon(query: string){
-    query = query.toLowerCase().trim();
+    query = query.trim();
     if(!this._pokemonHistorial.includes(query)){
       this._pokemonHistorial.unshift( query )
     }

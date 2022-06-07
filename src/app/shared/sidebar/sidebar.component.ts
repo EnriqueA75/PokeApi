@@ -31,5 +31,7 @@ export class SidebarComponent implements OnInit {
   currentPage(){
     return this.router.url;
   }
-
+  getRandomNumber() {
+    return Math.floor(Math.random() * 850);
+  }
 }

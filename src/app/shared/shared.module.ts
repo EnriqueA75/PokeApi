@@ -5,6 +5,7 @@ import { ConfirmationModalComponent } from './confirmation-modal/confirmation-mo
 import { ScreenMessageComponent } from './screen-message/screen-message.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     ErrorPageComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     SidebarComponent,

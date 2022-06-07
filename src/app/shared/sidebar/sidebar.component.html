@@ -8,8 +8,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="/home" class="nav-item nav-link">Home</a>
-                <a href="/pokemons/favorites" class="nav-item nav-link">Favorites</a>
+                <a [routerLink]="['/home']" class="nav-item nav-link">Home</a>
+                <a [routerLink]="['/pokemons/favorites']" class="nav-item nav-link">Favorites</a>
+                <a [routerLink]="['/pokemons/random', getRandomNumber()]"  class="nav-item nav-link">¡Random!</a>
             </div>
             <div class="navbar-nav ms-auto" *ngIf="currentPage() === '/'">
                 <!-- <form class="d-flex"> -->

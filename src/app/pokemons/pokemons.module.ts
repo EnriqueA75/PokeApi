@@ -5,9 +5,9 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
-import { backgroundPipe } from './pipes/background.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { DetailedPokemonComponent } from './detailed-pokemon/detailed-pokemon.component';
+import { RandomPokemonPageComponent } from './random-pokemon-page/random-pokemon-page.component';
 
 
 @NgModule({
@@ -15,15 +15,15 @@ import { DetailedPokemonComponent } from './detailed-pokemon/detailed-pokemon.co
     FavoritesPageComponent,
     HomePageComponent,
     PokemonCardComponent,
-    backgroundPipe,
-    DetailedPokemonComponent
+    DetailedPokemonComponent,
+    RandomPokemonPageComponent,
   ],
   exports: [
     FavoritesPageComponent,
     HomePageComponent,
     PokemonCardComponent,
     DetailedPokemonComponent,
-    backgroundPipe
+    RandomPokemonPageComponent
   ],
   imports: [
     CommonModule,
