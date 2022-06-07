@@ -1,3 +1,5 @@
+<app-spinner *ngIf="!pokemon && !isErrorPage"></app-spinner>
+<app-error-page *ngIf="!pokemon && isErrorPage"></app-error-page>
 <div *ngIf="pokemon">
     <app-pokemon-card [results]="pokemon" [currentPage]="currentPage()"></app-pokemon-card>
 </div>
