@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokeService } from '../services/poke.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 
 @Component({
@@ -15,7 +15,8 @@ export class RandomPokemonPageComponent implements OnInit {
 
   constructor(
     private pokeService: PokeService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +28,10 @@ export class RandomPokemonPageComponent implements OnInit {
       err => {
         this.isErrorPage = err;
       })
+  }
+
+  currentPage(){
+    return this.router.url;
   }
 
 }

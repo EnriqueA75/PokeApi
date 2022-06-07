@@ -11,7 +11,7 @@
         <div class="col-sm px-1">
             <a [routerLink]="['/pokemons/pokemon', results.species.name]" class="btn btn-success">More Information</a>
         </div>
-        <div class="col-sm px-1" *ngIf="currentPage === '/' && !existingPokemonCheck(results.id).length">
+        <div class="col-sm px-1" *ngIf="!existingPokemonCheck(results.id).length">
             <button class="btn btn-warning text-light fav-icon" (click)="addToFavorite(results)">Add to Favorites</button>
         </div>
         <div class="col-sm px-1" *ngIf="currentPage === '/pokemons/favorites'">
