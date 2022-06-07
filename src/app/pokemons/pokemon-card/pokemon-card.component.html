@@ -17,7 +17,7 @@
         <div class="col-sm px-1" *ngIf="currentPage === '/pokemons/favorites'">
           <button class="btn btn-danger text-light fav-icon" (click)="deleteFavorite(results.id)">Delete from Favorite</button>
       </div>
-      <div class="col-sm px-1" *ngIf="currentPage === '/' && existingPokemonCheck(results.id).length">
+      <div class="col-sm px-1" *ngIf="currentPage !== '/pokemons/favorites' && existingPokemonCheck(results.id).length">
         <button class="btn btn-info text-light fav-icon">Already Favorite</button>
     </div>
       </div>

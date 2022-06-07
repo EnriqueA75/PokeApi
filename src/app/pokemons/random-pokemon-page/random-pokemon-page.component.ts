@@ -29,7 +29,7 @@ export class RandomPokemonPageComponent implements OnInit {
         this.isErrorPage = err;
       })
   }
-
+  
   currentPage(){
     return this.router.url;
   }
