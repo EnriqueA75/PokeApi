@@ -28,7 +28,7 @@ export class PokeService {
   }
 
   handleModalView(){
-    console.log('desde handleModalView')
+    console.log(this.isModalOpen)
     this.isModalOpen = !this.isModalOpen;
   }
 

@@ -9,7 +9,7 @@ import { PokeService } from '../services/poke.service';
   styleUrls: ['./detailed-pokemon.component.css']
 })
 export class DetailedPokemonComponent implements OnInit {
-
+  
   pokemon: any;
   isErrorPage: boolean = false;
 
@@ -33,5 +33,4 @@ export class DetailedPokemonComponent implements OnInit {
         this.isErrorPage = err;
       })
   }
-
 }

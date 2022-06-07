@@ -1,5 +1,7 @@
 <app-spinner *ngIf="!pokemon && !isErrorPage; else divPokemon"></app-spinner>
+
 <app-error-page *ngIf="isErrorPage && !pokemon"></app-error-page>
+
 <ng-template #divPokemon>
     <div>
         <div class="h-100 d-flex flex-wrap">

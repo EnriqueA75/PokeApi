@@ -3,3 +3,6 @@
 <div *ngIf="pokemon">
     <app-pokemon-card [results]="pokemon" [currentPage]="currentPage()"></app-pokemon-card>
 </div>
+<div *ngIf="isThemodalOpen">
+    <app-confirmation-modal [modalContent]="modalContent"></app-confirmation-modal>
+</div>

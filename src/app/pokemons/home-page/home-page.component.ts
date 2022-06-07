@@ -48,7 +48,7 @@ export class HomePageComponent implements OnInit {
     return this.pokeService.isPokemon;
   }
   get isThemodalOpen() {
-    return this.openTheErrorModal = this.pokeService.isModalOpen;
+    return this.pokeService.isModalOpen;
   }
 
   currentPage(){

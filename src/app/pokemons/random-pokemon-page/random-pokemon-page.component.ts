@@ -10,6 +10,11 @@ import { switchMap } from 'rxjs';
 })
 export class RandomPokemonPageComponent implements OnInit {
 
+  modalContent = {
+    gifUrl: 'https://i.pinimg.com/originals/fb/2c/56/fb2c56a4b5b055f1e5b0adab5a7593c5.gif',
+    textContent: 'Added to your favorites!'
+  }
+
   pokemon: any;
   isErrorPage: boolean = false;
 
@@ -29,9 +34,14 @@ export class RandomPokemonPageComponent implements OnInit {
         this.isErrorPage = err;
       })
   }
-  
+
   currentPage(){
     return this.router.url;
   }
+
+  get isThemodalOpen() {
+    return this.pokeService.isModalOpen;
+  }
+
 
 }
