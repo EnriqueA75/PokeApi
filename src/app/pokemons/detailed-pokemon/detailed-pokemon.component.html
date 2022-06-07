@@ -1,5 +1,5 @@
-<app-spinner *ngIf="!pokemon; else divPokemon"></app-spinner>
-
+<app-spinner *ngIf="!pokemon && !isErrorPage; else divPokemon"></app-spinner>
+<app-error-page *ngIf="isErrorPage && !pokemon"></app-error-page>
 <ng-template #divPokemon>
     <div>
         <div class="h-100 d-flex">
@@ -74,7 +74,7 @@
                         <p>Weight: {{pokemon.weight}}</p>
                     </div>
                     <div class="pt-bar">
-                        <div class="rounded" [ngStyle]="{'width.px': pokemon.weight/3}" style="height: 10px; background-color: #ff00fb;">
+                        <div class="rounded" [ngStyle]="{'width.px': pokemon.weight/3}" style="height: 10px; background-color: #ed9eec;">
                             <span></span>
                         </div>
                     </div>

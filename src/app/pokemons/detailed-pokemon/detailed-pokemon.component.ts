@@ -11,6 +11,7 @@ import { PokeService } from '../services/poke.service';
 export class DetailedPokemonComponent implements OnInit {
 
   pokemon: any;
+  isErrorPage: boolean = false;
 
   clientesMapa = {
     '=1': 'Type:',
@@ -27,7 +28,10 @@ export class DetailedPokemonComponent implements OnInit {
       .pipe(
         switchMap( ({id}) => this.pokeService.getPokemonDetails(id))
       )
-      .subscribe((pokemon) => this.pokemon = pokemon)
+      .subscribe((pokemon) => {this.pokemon = pokemon}, 
+      err => {
+        this.isErrorPage = err;
+      })
   }
 
 }

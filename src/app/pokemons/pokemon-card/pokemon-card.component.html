@@ -4,9 +4,9 @@
     </div>
     <div class="card-body text-light">
       <h5 class="card-title title-font px-1">{{results.species.name | titlecase}}</h5>
-      <p class="card-text body-font px-1">Pokedex Number: {{results.id}}</p>
-      <p class="card-text body-font px-1">Type: {{results.types[0].type.name | titlecase}}</p>
-      <p class="card-text body-font px-1">Weight: {{results.weight}}</p>
+      <p class="card-text px-1">Pokedex Number: {{results.id}}</p>
+      <p class="card-text px-1">Type: {{results.types[0].type.name | titlecase}}</p>
+      <p class="card-text px-1">Weight: {{results.weight}}</p>
       <div class="d-flex text-center">
         <div class="col-sm px-1">
             <a [routerLink]="['/pokemons/pokemon', results.species.name]" class="btn btn-success">More Information</a>

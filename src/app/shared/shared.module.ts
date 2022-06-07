@@ -4,6 +4,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 import { ScreenMessageComponent } from './screen-message/screen-message.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     ConfirmationModalComponent,
     ScreenMessageComponent,
     SpinnerComponent,
+    ErrorPageComponent,
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     SidebarComponent,
     ConfirmationModalComponent,
     ScreenMessageComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ErrorPageComponent
   ]
 })
 export class SharedModule { }
