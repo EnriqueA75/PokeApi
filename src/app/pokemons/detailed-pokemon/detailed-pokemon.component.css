@@ -23,7 +23,7 @@
     .mobile-title-position {
         margin-left: 5vh;
     }
-  }
+}
 @keyframes animatedBar {
     from {
         transform: translateY(-100%);

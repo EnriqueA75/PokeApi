@@ -23,6 +23,7 @@
 .verified-position {
     margin-bottom: 3px;
 }
+
 @keyframes pulse {
     from {
         transform : scale(0.60);
