@@ -13,7 +13,7 @@
                 <a [routerLink]="['/pokemons/random', getRandomNumber()]"  class="nav-item nav-link">¡Random!</a>
             </div>
             <div class="navbar-nav ms-auto" *ngIf="currentPage() === '/'">
-                <!-- <form class="d-flex"> -->
+                <!-- <form> -->
                     <div class="input-group">                    
                         <input 
                             type="text" 
@@ -22,9 +22,9 @@
                             (keyup.enter)="searchPk()"
                             #txtSearchPk
                         />
-                        <!-- <button type="button" class="btn btn-secondary btn-search">
+                        <button type="button" class="btn btn-secondary btn-search" (click)="searchPk()">
                             Search
-                        </button> -->
+                        </button>
                     </div>
                 <!-- </form> -->
             </div>
