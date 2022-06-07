@@ -17,9 +17,11 @@
         <div class="col-sm px-1" *ngIf="currentPage === '/pokemons/favorites'">
           <button class="btn btn-danger text-light fav-icon" (click)="deleteFavorite(results.id)">Delete from Favorite</button>
       </div>
-      <div class="col-sm px-1" *ngIf="currentPage !== '/pokemons/favorites' && existingPokemonCheck(results.id).length">
-        <button class="btn btn-info text-light fav-icon">Already Favorite</button>
-    </div>
       </div>
+      <div class="col-sm px-1 text-center" *ngIf="currentPage !== '/pokemons/favorites' && existingPokemonCheck(results.id).length">
+        <button class="btn text-light fav-icon already-fav">Already Favorite 
+          <img class="verified-position" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAACsklEQVQ4jb2US0wTURSG/zsP2mnpi7YGhaCwESmWhRg3JkTixsTEiGGjCyjFSNCNe2Pi2sSVRk0MMUo0xoVh4UaBajS40RRfQTFFiMRobDtAS2emM3Ovi0rt6Awr49lMzj3zf3P+c+8d4H9GZCg10jwy07SRNw2nmqPDU4nNNMQRlpw+a5bWLxGTKpwv1E9APcbayi0Iglvw+s78uNFzxU4nOAFNVRlwt+wA762XlMynCcoY8e6Oc+Z6CeXlL0MAbIGWDiOJqYtUL+8HAKoo3b49ewXCcRYBoxSF9Eudc7lfAQBXJz7Ojh08bwv0H7ln+GJxnjEK3lMPItobYLoBs1QEIRyKc+/M1Qf91Rctn+fd0jfGGIRA0BEGAEQUIASCFY3L/b22ZgFykjStr+QdQQCDspABWCXT5RyIJE3bAsOnnvbRYuFYXSjsiFOWFn+1WHmIDWHQYuFo5OSzwxZgNPmk38zL972dcQ/v99vCdFmGKcuQWtuqa7zPD28s7jVXcxNbRl/0VYEcT0RQk4Axi73C6zSYXgbVNKiZeXg6YgD54+gyBkZBmMH4muaB6FBqUJdz1zztu1wbA9flPNSFDAjHwd3aBiEYsrCMtVUo83MqH40ks1d77liAABAefHSTlzwD7u2tv63msqCaCte25r/GoC4tgmra3exY73HLDKvdK2qv2GDdFDEcsYUBlU0x1VJP7ZoFaGra1opVGbSs2UIAgOll6HIezDTAFKWxtmY5vWIweFlZyBwAwFFN7fB17+Ptrt7abNrkXK63hKAshCMztXXHv03oxMNZqamli6v3ovTxAwMDPDvbiVlah/Z1+X3+9qFOO53j/eI97nF16XMXNQzDFY2MUlXVi2/S14kg1gmBwLjjPDaLSGLyQuPp57GNvCEx2RFNps6BMUdn/zx+AqF+DI3KF5SoAAAAAElFTkSuQmCC"/>
+        </button>
+    </div>
     </div>
   </div>

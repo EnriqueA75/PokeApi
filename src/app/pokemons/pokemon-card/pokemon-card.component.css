@@ -16,6 +16,13 @@
     animation-name: pulse;
     animation-duration: 1s;
 }
+.already-fav {
+    border: 1px solid aqua;
+    margin-top: 1vh;
+}
+.verified-position {
+    margin-bottom: 3px;
+}
 @keyframes pulse {
     from {
         transform : scale(0.60);
